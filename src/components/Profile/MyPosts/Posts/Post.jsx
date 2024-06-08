@@ -1,5 +1,6 @@
 import s from "./Post.module.css"
 import sCom from "./../MyPostsCommon.module.css";
+import MyPosts_button from "../MyPosts_button/MyPosts_button";
 
 export function Post(props) {
     return (
@@ -16,12 +17,8 @@ export function Post(props) {
             </p>
 
             <div className={s.buttonContainer}>
-                <button>
-                    <a>Like {props.likesCount != 0 ? props.likesCount : ''}</a>
-                </button>
-                <button>
-                    <a>Repost {props.repostsCount != 0 ? props.repostsCount : ''}</a>
-                </button>
+                <MyPosts_button text="Like" count={props.likesCount} />
+                <MyPosts_button text="Repost" count={props.repostsCount} />
             </div>
 
         </div>

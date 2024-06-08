@@ -1,5 +1,6 @@
 import s from "./Post_create.module.css";
 import sCom from "./../MyPostsCommon.module.css";
+import MyPosts_button from "../MyPosts_button/MyPosts_button";
 
 const Post_create = (props) => {
     return (
@@ -12,9 +13,7 @@ const Post_create = (props) => {
                 <input></input>
             </div>
 
-            <button>
-                <a>Post</a>
-            </button>
+            <MyPosts_button text='Post' />
         </div>
     )
 }

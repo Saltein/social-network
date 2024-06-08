@@ -1,0 +1,26 @@
+.button {
+    display: flex;
+    background-color: rgb(80, 180, 150);
+    color: white;
+    font-weight: 600;
+
+    height: 30px;
+    width: 90px;
+    border-radius: 15px;
+    border: unset;
+    justify-content: center;
+    align-items: center;
+
+    transition: 200ms;
+
+    &:hover {
+        background-color: white;
+        transition: 100ms;
+        color: black;
+    }
+
+    &:active {
+        box-shadow: 0 0 20px white;
+        color: rgb(80, 180, 150);
+    }
+}
