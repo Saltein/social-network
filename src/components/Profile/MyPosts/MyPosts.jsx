@@ -3,15 +3,23 @@ import Post_create from "./Post_create/Post_create";
 import { Post } from "./Posts/Post";
 
 export function MyPosts() {
+
+    let postsData = [
+        { id: "1", nickname: "jijka bobra", likesCount: 25, repostsCount: 4, text: "Евгений Александрович Кустолян" },
+        { id: "2", nickname: "bobr kurva", likesCount: 12, repostsCount: 0, text: "Амогус как так" },
+        { id: "3", nickname: "just a cat", likesCount: 3, repostsCount: 1, text: "капуста вкусная" },
+        { id: "4", nickname: "Жоский крот", likesCount: 14, repostsCount: 5, text: "сегодня 31 февраля, ахахаха, я пошутил, с 1 апреля" },
+    ]
+
+    let postElements = postsData.map(post => {
+        return <Post id={post.id} nickname={post.nickname} likesCount={post.likesCount} repostsCount={post.repostsCount} text={post.text} />
+    })
+
     return (
         <div>
-            My posts
             <Post_create />
             <div>
-                <Post nickname="jijka bobra" likesCount="25" repostsCount="4" postText="Евгений Александрович Кустолян (также Кустелян[1], в некоторых источниках Алексеевич; укр. Євген Олександрович Кустолян; (13 декабря 1898, Харьков — 2 сентября 1937, Киев) — советский экономист, статистик и деятель высшего образования. Участник Гражданской войны в России, сподвижник Артёма (Сергеева). Учился и работал в Харьковском институте народного хозяйства, был его проректором и последним ректором. После расформирования института работал в Харьковском инженерно-экономическом институте. Позже перешёл на партийную работу, был помощником секретаря ЦК ВКП (б) Лазаря Кагановича и заместителем председателя Харьковского городского совета. С 1935 года работал заместителем председателя республиканского Управления народнохозяйственного учёта. Участвовал в организации переписи населения 1937 года. После того, как его результаты были признаны ошибочными, Евгений Кустолян вместе с другими организаторами переписи был обвинён во вредительстве и приговорён к расстрелу. В 1957 году был реабилитирован.  как так? сам хз" />
-                <Post nickname="bobr kurva" likesCount="12" repostsCount="0" postText="Амогус как так"/>
-                <Post nickname="just a cat" likesCount="3" repostsCount="0" postText="капуста вкусная"/>
-                <Post nickname="Жоский крот" likesCount="13" repostsCount="5" postText="сегодня 31 февраля, ахахаха, я пошутил, с 1 апреля"/>
+                {postElements}
             </div>
         </div>
     )

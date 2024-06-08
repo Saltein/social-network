@@ -3,10 +3,15 @@
 }
 
 .input_block button {
-    margin-left:  auto;
+    margin-left: auto;
+}
+
+.input_div {
+    width: 100%;
 }
 
 .input_block input {
+    width: 100%;
     transition: 200ms;
     border-radius: 15px;
     border: none;
@@ -17,8 +22,15 @@
         box-shadow: 0 0 20px rgb(255, 255, 255);
         outline: none;
     }
+
     &:hover {
         background-color: white;
         transition: 100ms;
     }
+}
+
+.input_block .label {
+    font-size: large;
+    font-weight: 600;
+    padding-left: 0px;
 }

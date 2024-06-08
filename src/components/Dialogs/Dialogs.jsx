@@ -1,26 +1,42 @@
-import s from "./Dialogs.module.css"
+import Dialog_item from "./Dialog_item/Dialog_item";
+import s from "./Dialogs.module.css";
+import Message_item from "./Message_item/Message_item";
 
 const Dialogs = (props) => {
+
+    let dialogsData = [
+        { id: "1", name: "Nikita", srcLink: "" },
+        { id: "2", name: "Жижич", srcLink: "" },
+        { id: "3", name: "Unknown", srcLink: "" },
+        { id: "4", name: "Кошич", srcLink: "" },
+        { id: "5", name: "Собаня", srcLink: "" },
+        { id: "6", name: "Салоед", srcLink: "" }
+    ];
+
+    let messageData = [
+        { id: "1", text: "aboba" },
+        { id: "2", text: "Привчёдел" },
+        { id: "3", text: "капуста" },
+        { id: "4", text: "))))))" },
+        { id: "5", text: "жижка" },
+    ]
+
+    let dialogElements = dialogsData.map(dialog => {
+        return <Dialog_item id={dialog.id} name={dialog.name} srcLink={dialog.srcLink} />
+    })
+
+    let messageElements = messageData.map(message => {
+        return <Message_item id={message.id} text={message.text} />
+    })
+
     return (
         <div className={s.dialog_page}>
             <div className={s.dialog_items}>
-                <div className={s.dialog + ' ' + s.active}>
-                    <img src="https://sun9-83.userapi.com/impg/IpH272nhUhEx52c4AXkLHcQMpdsZsYH1n8p_Ng/W1qdfwqIqn4.jpg?size=1080x1049&quality=95&sign=781d343a4e5337711c3d4177688e6af3&c_uniq_tag=6eEWvFQQErhuNRht6Fy3hTYiYbI5CnqblALaf45tICI&type=album" />
-                    Nikita
-                </div>
-                <div className={s.dialog}>
-                    <img src="https://sun9-83.userapi.com/impg/IpH272nhUhEx52c4AXkLHcQMpdsZsYH1n8p_Ng/W1qdfwqIqn4.jpg?size=1080x1049&quality=95&sign=781d343a4e5337711c3d4177688e6af3&c_uniq_tag=6eEWvFQQErhuNRht6Fy3hTYiYbI5CnqblALaf45tICI&type=album" />
-                    Unknown
-                </div>
+                {dialogElements}
             </div>
 
             <div className={s.message_items}>
-                <div className={s.message}>
-                    hi
-                </div>
-                <div className={s.message}>
-                    hello
-                </div>
+                {messageElements}
             </div>
         </div>
     )

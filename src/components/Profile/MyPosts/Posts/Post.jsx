@@ -12,7 +12,7 @@ export function Post(props) {
             </div>
 
             <p>
-                {props.postText}
+                {props.text}
             </p>
 
             <div className={s.buttonContainer}>

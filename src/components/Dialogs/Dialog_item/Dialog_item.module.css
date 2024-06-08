@@ -1,0 +1,20 @@
+.dialog {
+    padding: 10px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    transition: 200ms;
+
+    &:hover {
+        background-color: rgb(255, 210, 100);
+        transition: 100ms;
+    }
+}
+
+.dialog img {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: 2px solid white;
+}

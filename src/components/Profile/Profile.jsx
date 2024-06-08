@@ -1,15 +1,11 @@
 import { MyPosts } from "./MyPosts/MyPosts";
 import s from "./Profile.module.css"
+import Profile_info from "./Profile_info/Profile_info";
 
 const Profile = () => {
     return (
         <div className={s.content}>
-            <div className={s.wideCat}>
-                <img src='https://thypix.com/wp-content/uploads/sad-cat-1.png'></img>
-            </div>
-            <div>
-                ava + description
-            </div>
+            <Profile_info />
             <MyPosts />
         </div>
     )
