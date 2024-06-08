@@ -1,0 +1,27 @@
+.item {
+    transition: 200ms;
+    display: flex;
+    border-radius: 15px;
+    height: 40px;
+    padding: 10px;
+
+    align-items: center;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+        transition: 100ms;
+    }
+}
+
+.item a {
+    color: black;
+    text-transform: capitalize;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
+.item img {
+    height: 100%;
+    margin-right: 10px;
+}
