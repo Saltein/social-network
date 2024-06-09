@@ -5,7 +5,7 @@ import { Post } from "./Posts/Post";
 export function MyPosts(props) {
 
     let postElements = props.postsData.map(post => {
-        return <Post id={post.id} nickname={post.nickname} likesCount={post.likesCount} repostsCount={post.repostsCount} text={post.text} />
+        return <Post id={post.id} nickname={post.nickname} likesCount={post.likesCount} repostsCount={post.repostsCount} text={post.text} avatarSrc={post.avatarSrc}/>
     })
 
     return (
