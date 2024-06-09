@@ -1,10 +1,15 @@
 .dialog {
     padding: 10px;
-    height: 60px;
+    height: 80px;
     display: flex;
+    align-items: center;
     flex-direction: row;
     gap: 10px;
     transition: 200ms;
+
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
 
     &:hover {
         background-color: rgb(255, 210, 100);
@@ -12,9 +17,18 @@
     }
 }
 
+.dialog a {
+    text-decoration: none;
+}
+
+.dialog a:visited {
+    color: initial;
+    text-decoration: none;
+}
+
 .dialog img {
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
     border-radius: 100%;
     border: 2px solid white;
 }
