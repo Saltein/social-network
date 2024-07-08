@@ -1,8 +1,11 @@
 import s from "./Post_create.module.css";
 import sCom from "./../MyPostsCommon.module.css";
 import MyPosts_button from "../MyPosts_button/MyPosts_button";
+import React from "react";
 
 const Post_create = (props) => {
+    let postMessage_ref = React.createRef();
+
     return (
         <div className={`${s.input_block} ${sCom.post_item}`}>
             <div className={s.label}>
@@ -10,10 +13,10 @@ const Post_create = (props) => {
             </div>
 
             <div className={s.input_div}>
-                <input></input>
+                <input ref={postMessage_ref}></input>
             </div>
 
-            <MyPosts_button text='Post' />
+            <MyPosts_button text='Post' reference={postMessage_ref} createPost={props.createPost} />
         </div>
     )
 }

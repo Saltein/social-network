@@ -1,5 +1,6 @@
 import Dialog_item from "./Dialog_item/Dialog_item";
 import s from "./Dialogs.module.css";
+import Message_area from "./Message_area/Message_area";
 import Message_item from "./Message_item/Message_item";
 
 const Dialogs = (props) => {
@@ -22,6 +23,7 @@ const Dialogs = (props) => {
                 <div className={s.messageBox}>
                     {messageElements}
                 </div>
+                <Message_area />
             </div>
         </div>
     )
