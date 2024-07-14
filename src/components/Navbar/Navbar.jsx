@@ -3,6 +3,7 @@ import s from "./Navbar.module.css";
 import Navbar_item from "./Navbar_Items/Navbar_item";
 
 const Navbar = (props) => {
+    debugger;
     return (
         <nav className={s.nav}>
             <div className={s.navSticky}>

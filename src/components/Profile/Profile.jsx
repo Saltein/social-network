@@ -3,6 +3,7 @@ import s from "./Profile.module.css"
 import Profile_info from "./Profile_info/Profile_info";
 
 const Profile = (props) => {
+    debugger;
     return (
         <div className={s.content}>
             <Profile_info state={props.state.profileInfo}/>

@@ -1,5 +1,6 @@
 .input_block {
     gap: 15px;
+    border-bottom: 1px solid white;
 }
 
 .input_block button {

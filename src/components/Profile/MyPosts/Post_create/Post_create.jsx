@@ -4,6 +4,7 @@ import MyPosts_button from "../MyPosts_button/MyPosts_button";
 import React from "react";
 
 const Post_create = (props) => {
+    debugger;
     let postMessage_ref = React.createRef();
 
     return (
@@ -13,10 +14,10 @@ const Post_create = (props) => {
             </div>
 
             <div className={s.input_div}>
-                <input ref={postMessage_ref}></input>
+                <input ref={postMessage_ref} />
             </div>
 
-            <MyPosts_button text='Post' reference={postMessage_ref} createPost={props.createPost} />
+            <MyPosts_button text='Post' reference={postMessage_ref} func={props.createPost} />
         </div>
     )
 }
