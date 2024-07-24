@@ -4,6 +4,7 @@ import Navbar_item from "./Navbar_Items/Navbar_item";
 
 const Navbar = (props) => {
     debugger;
+    console.log(Boolean([]));
     return (
         <nav className={s.nav}>
             <div className={s.navSticky}>
@@ -14,7 +15,7 @@ const Navbar = (props) => {
                     <Navbar_item label="Музыка" hrefto="/music" srclink="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/600px-Simple_Music.svg.png" />
                     <Navbar_item label="Настройки" hrefto="/settings" srclink="https://static-00.iconduck.com/assets.00/settings-icon-2048x2046-cw28eevx.png" />
                 </div>
-
+                
                 <Friends_list state={props.state} />
             </div>
         </nav>

@@ -7,7 +7,8 @@ const MyPosts_button = (props) => {
     
     let buttonFunc = () => {
         let text = props.reference.current.value;
-        props.func(text);
+        let action = {type: "CREATE-POST", postMessage: text};
+        props.dispatch(action);
     }
 
     return (

@@ -19,10 +19,10 @@ let store = {
             ],
             profileInfo: [
                 {
-                    id: 1, 
-                    name: "Никита Валов", 
-                    status: "youtube: https://youtube.com/@salteinsgameverse", 
-                    profileBackgroundSrc: "https://images-ext-1.discordapp.net/external/N50yTUt1UCiMsSl9VoxgqwYJk1snfJxJs9Sgug3vm9g/%3Fimw%3D5000%26imh%3D5000%26ima%3Dfit%26impolicy%3DLetterbox%26imcolor%3D%2523000000%26letterbox%3Dfalse/https/steamuserimages-a.akamaihd.net/ugc/2057618192242806109/DA5AA88C0B1317669AFF69422748E62C5EC4F460/?format=webp&width=1246&height=701", 
+                    id: 1,
+                    name: "Никита Валов",
+                    status: "youtube: https://youtube.com/@salteinsgameverse",
+                    profileBackgroundSrc: "https://images-ext-1.discordapp.net/external/N50yTUt1UCiMsSl9VoxgqwYJk1snfJxJs9Sgug3vm9g/%3Fimw%3D5000%26imh%3D5000%26ima%3Dfit%26impolicy%3DLetterbox%26imcolor%3D%2523000000%26letterbox%3Dfalse/https/steamuserimages-a.akamaihd.net/ugc/2057618192242806109/DA5AA88C0B1317669AFF69422748E62C5EC4F460/?format=webp&width=1246&height=701",
                     avatarSrc: "https://sun2-17.userapi.com/s/v1/ig2/34hZaDU2nPO1mLbjEeMw98F_nOmjQKOP9ieZV5AVs9aCspARppCEy6hpbwbzrpDAJ-EGLXijsxw8Qxza6HjTBdtM.jpg?quality=95&crop=0,114,2332,2332&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440&ava=1&u=F-uri_C2q6VsyzwFFVmiaWUESK0DEUTx4R4Qpy_HGUA&cs=200x200",
                 }
             ]
@@ -122,25 +122,26 @@ let store = {
         return this._state
     },
 
-    _callSubscriber() {},
-
-    createPost(postMessage) {
-        debugger;
-        let postsData = this._state.profilePage.postsData;
-        let newPost = {
-            id: (postsData.reduce((max, obj) => obj.id > max ? obj.id : max, postsData[0].id) + 1),
-            nickname: "Никита Валов",
-            avatarSrc: "https://sun9-83.userapi.com/impg/IpH272nhUhEx52c4AXkLHcQMpdsZsYH1n8p_Ng/W1qdfwqIqn4.jpg?size=1080x1049&quality=95&sign=781d343a4e5337711c3d4177688e6af3&c_uniq_tag=6eEWvFQQErhuNRht6Fy3hTYiYbI5CnqblALaf45tICI&type=album",
-            likesCount: 0,
-            repostsCount: 0,
-            text: postMessage
-        };
-        this._state.profilePage.postsData.push(newPost);
-        this._callSubscriber(this._state);
-    },
-
+    _callSubscriber() { },
     subscribe(observer) {
         this._callSubscriber = observer
+    },
+
+    dispatch(action) {
+        if (action.type === "CREATE-POST") {
+            debugger;
+            let postsData = this._state.profilePage.postsData;
+            let newPost = {
+                id: (postsData.reduce((max, obj) => obj.id > max ? obj.id : max, postsData[0].id) + 1),
+                nickname: "Никита Валов",
+                avatarSrc: "",
+                likesCount: 0,
+                repostsCount: 0,
+                text: action.postMessage
+            };
+            this._state.profilePage.postsData.push(newPost);
+            this._callSubscriber(this._state);
+        }
     }
 }
 

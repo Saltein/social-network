@@ -10,7 +10,7 @@ export function MyPosts(props) {
 
     return (
         <div>
-            <Post_create createPost={props.createPost} />
+            <Post_create dispatch={props.dispatch} />
             <div>
                 {postElements}
             </div>

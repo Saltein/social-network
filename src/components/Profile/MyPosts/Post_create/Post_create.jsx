@@ -17,7 +17,7 @@ const Post_create = (props) => {
                 <input ref={postMessage_ref} />
             </div>
 
-            <MyPosts_button text='Post' reference={postMessage_ref} func={props.createPost} />
+            <MyPosts_button text='Post' reference={postMessage_ref} dispatch={props.dispatch} />
         </div>
     )
 }
